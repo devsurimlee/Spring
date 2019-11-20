@@ -12,9 +12,9 @@ import co.sr.board.vo.BoardVO;
 
 @Repository("boardDAO")
 public class BoardDAO {
-	Connection conn;
-	PreparedStatement pstmt;
-	ResultSet rs;
+	public Connection conn;
+	public PreparedStatement pstmt;
+	public ResultSet rs;
 	
 	private String driver="oracle.jdbc.driver.OracleDriver";
 	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -69,4 +69,5 @@ public class BoardDAO {
 	public void update(BoardVO dto) {
 		
 	}
+	
 }
