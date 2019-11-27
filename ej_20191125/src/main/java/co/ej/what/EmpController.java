@@ -23,7 +23,7 @@ public class EmpController {
 		
 		model.addAttribute("list", list);
 		
-		return "empList";
+		return "empList"; 
 	}
 
 }
