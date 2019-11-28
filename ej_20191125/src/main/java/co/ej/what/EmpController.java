@@ -21,7 +21,7 @@ public class EmpController {
 
 		List<EmpVO> list=empService.select();
 		
-		model.addAttribute("list", list);
+		model.addAttribute("list", list); ///aa
 		
 		return "empList"; 
 	}
