@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- mapping용  xml; typeAliases > alias -->
+<mapper namespace="BoardDAO">
+<!--  <resultMap type="board" id="boardMap">
+	 	<id column="SEQ" property="seq"/>
+	 	<result column="TITLE" property="title"/>
+	 	<result column="WRITER" property="writer"/>
+	 	<result column="CONTENT" property="content"/>
+	 	<result column="REGDATE" property="regdate"/>
+	 	<result column="CNT" property="cnt"/>
+	 </resultMap> -->
+	 
+<!-- 	 <select id="getBoardList" resultMap="boardMap"> -->
+	 
+ 	<select id="getBoardList" resultType="board">
+ 	select b.* from (select a.*, rownum rn from (
+ 		SELECT	SEQ,
+ 				TITLE,
+ 				WRITER,
+ 				CONTENT,
+ 				REGDATE	"regDate",
+ 				CNT
+ 		FROM	BOARD
+ 		<where>
+	 		<if test="keyword !=null and keyword !='' ">
+	 			<if test="searchCondition == 'title' ">
+	 				title like '%' || #{keyword} || '%'
+	 			</if>
+	 			<if test="searchCondition == 'content' ">
+	 				content like '%' || #{keyword} || '%'
+	 			</if>
+	 		</if>
+ 		</where>
+ 		
+ 		ORDER	BY SEQ DESC
+ 		) a ) b where rn between #{start} and #{end}
+ 	</select>
+ 	
+ 	<!-- paging 전체건수 구하기용 -->
+ 	<select id="getBoardCount" resultType="int">
+ 		SELECT COUNT(*) 
+ 		FROM BOARD
+ 		 <where>
+	 		<if test="keyword !=null and keyword !='' ">
+	 			<if test="searchCondition == 'title' ">
+	 				title like '%' || #{keyword} || '%'
+	 			</if>
+	 			<if test="searchCondition == 'content' ">
+	 				content like '%' || #{keyword} || '%'
+	 			</if>
+	 		</if>
+ 		</where>
+ 	</select>
+ 	
+ 	<select id="getBoard" resultType="board">
+ 		 SELECT	SEQ,
+ 				TITLE,
+ 				WRITER,
+ 				CONTENT,
+ 				REGDATE	"regDate",
+ 				CNT
+ 		FROM	BOARD
+ 		WHERE SEQ = #{seq}
+ 	</select>
+ 	
+ 	
+ 	<!-- 목록조회 map -->
+ 	<select id="getBoardListMap" resultType="map">
+ 		SELECT	SEQ		"seq",
+ 				TITLE	"title",
+ 				WRITER	"writer",
+ 				CONTENT "content",
+ 				REGDATE "regDate",
+ 				CNT		"cnt"
+ 		FROM	BOARD
+ 		ORDER	BY SEQ DESC
+ 	</select>
+ 	
+ 	<delete id="deleteBoard" parameterType="board">
+ 		DELETE	BOARD
+ 		WHERE	SQL = #{seq}
+ 	</delete>
+ 	
+ 	<insert id="insertBoard">
+ 		<!-- BoardVO > int seq에  selectKey값을 담음-->
+ 		<selectKey order="BEFORE" resultType="int" keyProperty="seq">
+ 			SELECT NVL(MAX(SEQ),0)+1 FROM BOARD
+ 		</selectKey>
+ 		INSERT INTO BOARD (
+ 							SEQ,
+ 							TITLE,
+ 							WRITER,
+ 							CONTENT,
+ 							REGDATE,
+ 							CNT	)
+ 					VALUES ( #{seq},
+ 							 #{title},
+ 							 #{writer},
+ 							 #{content},
+ 							 sysdate,
+ 							 0	)
+ 	</insert>
+ 	
+ 	<update id="updateBoard">
+ 		UPDATE BOARD SET
+ 				TITLE = #{title},
+ 				CONTENT = #{title}
+ 		WHERE	SEQ = #{seq}	
+ 	</update>
+ 	
+ </mapper>

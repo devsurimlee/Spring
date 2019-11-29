@@ -1,0 +1,50 @@
+[
+	{
+		"emplNotcId":"20191101",
+		"emplNotcCont":"와이에이치데이타베이스 웹 개발자 채용공고",
+		"emplExptPers":"3",
+		"licnCode":"1001",
+		"langCode":"100",
+		"notcCont":"담당업무\n -Java, Spring기반의 웹 프로젝트\n -웹//WAS구축\n 근무조건 \n 고용형태:정규직(수습기간 1개월) \n 근무부서: 개발팀 \n 접수방법 : 인트루트 채용 시스템 \n 기타유의사항 \n 입사지원서 및 제출 서류에 허위사실이 있을 경우 채용이 취소될 수 있습니다.",
+		"mngeId":"10001",
+		"notcRegtDt":"20191101",
+		"recvStrtDt":"20191110",
+		"recvEndDt":"20191130"
+	},
+	{
+		"emplNotcId":"20191102",
+		"emplNotcCont":"JAVA,Spring Framework, SQL 관련 프로젝트 개발자 모집",
+		"emplExptPers":"10",
+		"licnCode":"",
+		"langCode":"",
+		"notcCont":"저희 리치앤타임(주)는 솔루션 공급, 시스템 통합(SI), 시스템 운영 및 관리(SM) 등을 주사업으로 하는 IT 전문기업입니다. 금융, 공공, 제조산업 기관 및 기업 등을 대상으로 시스템 구축을 전문으로 하는 기업입니다. \n 모집부분 및 자격 요건 \n JAVA: [필수사항] 학력:초대졸이상, 경력:신입 및 경력",
+		"mngeId":"11210",
+		"notcRegtDt":"20191101",
+		"recvStrtDt":"20191105",
+		"recvEndDt":"20191110"
+	},
+	{
+		"emplNotcId":"20191103",
+		"emplNotcCont":"(주)태원이노베이션 웹 개발자 모집",
+		"emplExptPers":"5",
+		"licnCode":"1002",
+		"langCode":"110",
+		"notcCont":"모집분야 : 웹프로그래머 모집 \n 담당업무 : 웹 개발 서버사이드  \n 자격요건 : -학력: 학사 학위 이상 혹은 동등한 수준, -경력: 관련분야 경력 3년 이상 \n [자격요건사항] 전자정부표준프레임워크 개발 가능자(경험자), spring framework 3.0 ,MySql 설계 개발 가능자, Java, Spring, Oracle, Linux , 서버 관련 개발 경험 ",
+		"mngeId":"10001",
+		"notcRegtDt":"20191101",
+		"recvStrtDt":"20191110",
+		"recvEndDt":"20191130"
+	},
+	{
+		"emplNotcId":"20191104",
+		"emplNotcCont":"자바개발자를 채용합니다.",
+		"emplExptPers":"3",
+		"licnCode":"",
+		"langCode":"110",
+		"notcCont":"관련직종: 응용소프트웨어 개발자 \n 직무내용:콜센터 개발, DB(MySQL, MS-SQL, ORACLE), HTML5 \n 고용형태: 기간의 정함이 없는 근로계약 파견근로 비희망 \n 임금조건 : 연봉 30,000,000원 이상 ~ 31,000,000원 이하 상여금 0% 미포함 \n 경력조",
+		"mngeId":"10002",
+		"notcRegtDt":"20191101",
+		"recvStrtDt":"20191112",
+		"recvEndDt":"20191130"
+	}
+]
