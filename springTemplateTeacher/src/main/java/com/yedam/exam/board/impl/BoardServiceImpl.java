@@ -22,7 +22,7 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public List<BoardVO> getBoardList(BoardSearchVO svo, Paging paging) {
 		//출력건수
-		paging.setPageUnit(3);
+		paging.setPageUnit(10);
 		// 페이지번호 파라미터
 		if( paging.getPage() == null) {
 			paging.setPage(1); 

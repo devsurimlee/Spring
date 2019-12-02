@@ -14,7 +14,7 @@ public class BoardVO {
 	private String title;
 	private String writer;
 	private int cnt;
-	@JsonIgnore 
+	//@JsonIgnore 
 	private String content;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-mm-yyyy hh:mm:ss")
 	private Date regDate;

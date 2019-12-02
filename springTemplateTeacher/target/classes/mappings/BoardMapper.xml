@@ -81,7 +81,7 @@
  	
  	<delete id="deleteBoard" parameterType="board">
  		DELETE	BOARD
- 		WHERE	SQL = #{seq}
+ 		WHERE	SEQ = #{seq}
  	</delete>
  	
  	<insert id="insertBoard">
