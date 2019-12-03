@@ -42,6 +42,8 @@
 	${board.title } 
 	${board.content }
 	${board.regDate }
+	<a href = "download/${board.uploadFilename }">${board.uploadFilename }</a>
+	
 	<br>
 </c:forEach>
 <!-- 목록끝 -->

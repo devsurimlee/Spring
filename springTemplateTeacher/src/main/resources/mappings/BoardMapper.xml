@@ -22,7 +22,8 @@
  				WRITER,
  				CONTENT,
  				REGDATE	"regDate",
- 				CNT
+ 				CNT,
+ 				UPLOAD_FILE_NAME "uploadFilename"
  		FROM	BOARD
  		<where>
 	 		<if test="keyword !=null and keyword !='' ">
@@ -95,13 +96,23 @@
  							WRITER,
  							CONTENT,
  							REGDATE,
- 							CNT	)
+ 							CNT
+ 					<if test="uploadFilename != null and uploadFilename != '' ">
+ 							
+ 							,UPLOAD_FILE_NAME
+ 					</if>		
+ 								)
  					VALUES ( #{seq},
  							 #{title},
  							 #{writer},
  							 #{content},
  							 sysdate,
- 							 0	)
+ 							 0	
+ 					<if test="uploadFilename != null and uploadFilename != '' ">
+ 							 
+ 							 , #{uploadFilename}
+ 					</if>
+ 							 )
  	</insert>
  	
  	<update id="updateBoard">

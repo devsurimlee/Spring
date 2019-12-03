@@ -9,12 +9,13 @@
 </head>
 <body>
 <h1>게시글 등록</h1>
-<form action="insertBoard">
-	작성자<input name="writer"></br>
-	제목<input name="title"><br>
-	내용<input name="content"><br>
-	<button>등록</button>
-</form>
+	<form action="insertBoard" method="post" enctype="multipart/form-data">
+	 	작성자 <input name="writer"> <br>
+	 	제목  <input name="title"> <br>
+	 	내용 <input name="content"> <br>
+	 	첨부파일 <input type="file" name="uploadFile" multiple="multiple"> <br>
+	 	<button>등록버튼</button>
+	</form>
 	
 </body>
 </html>
