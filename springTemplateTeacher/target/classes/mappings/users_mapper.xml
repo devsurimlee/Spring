@@ -25,7 +25,7 @@
 		select id "id", 
 				password "password", 
 				name	"name", 
-				role	"name"
+				role	"role"
 		from users
 	</select>
 

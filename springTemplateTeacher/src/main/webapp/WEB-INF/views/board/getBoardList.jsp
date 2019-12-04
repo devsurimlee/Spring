@@ -28,6 +28,7 @@
 		</select>
 		<input name="keyword" value="${BoardSearchVO.keyword}">
 		<button>검색</button>
+		<button type="button" onclick="location.href='downloadExcel' ">엑셀다운로드</button>
 	</form>
 <!-- 검색폼 끝 -->
 	<form action="insertBoardForm">

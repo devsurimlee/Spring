@@ -212,6 +212,7 @@
 <hr/>		
 <div class="container">	
 	<h2>사용자 목록</h2>
+	<a href="userReport">pdf 보기</a>
 	<table class="table text-center">
 		<thead>
 		<tr>
