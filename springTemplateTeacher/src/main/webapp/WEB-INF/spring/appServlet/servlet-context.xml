@@ -4,7 +4,11 @@
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.3.xsd
+		http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
@@ -32,6 +36,19 @@
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="maxUploadSizePerFile" value="3000000"></beans:property>
 	</beans:bean>	
+	
+	<!-- 해당 태그들은 크론탭을 설정에 필요한 태그들 -->
+	<task:scheduler id="jobScheduler" pool-size="10" />
+	<task:annotation-driven scheduler="jobScheduler" />
+	
+	<!-- 웹소켓 -->
+	<beans:bean id="myHandler" class="com.yedam.exam.common.SpringSocketHandler"/>
+	<websocket:handlers>
+		<websocket:mapping path="/broadcast" handler="myHandler"/>
+		<websocket:handshake-interceptors>
+			<beans:bean class="com.yedam.exam.common.HandshakeInterceptor"/>
+		</websocket:handshake-interceptors>
+	</websocket:handlers> 
 	
 	<!-- 에러 예외처리 리졸브 -->
 <!-- 	<beans:bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">

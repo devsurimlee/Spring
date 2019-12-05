@@ -11,42 +11,41 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-<!-- 	<logger name="com.yedam.exam">
-		<level value="info" />
+	<logger name="com.yedam.exam">
+		<level value="WARN " />
 	</logger> -->
 	
 	<!-- 3rdparty Loggers -->
-<!-- 	<logger name="org.springframework.core">
-		<level value="info" />
+ 	<logger name="org.springframework.core">
+		<level value="WARN " />
 	</logger>
 	
 	<logger name="org.springframework.beans">
-		<level value="info" />
+		<level value="WARN" />
 	</logger>
 	
 	<logger name="org.springframework.context">
-		<level value="info" />
+		<level value="WARN" />
 	</logger>
 
 	<logger name="org.springframework.web">
-		<level value="info" />
+		<level value="WARN" />
 	</logger>
-
 
 	<logger name="jdbc.sqltiming" additivity="false">
-		<level value="DEBUG" />
+		<level value="WARN" />
 		<appender-ref ref="console" />
-	</logger> -->
+	</logger> 
 	
 	<logger name="jdbc.sqlonly" additivity="false">
-		<level value="INFO" />
+		<level value="WARN" />
 		<appender-ref ref="console" />
 	</logger>
 	
-	<!-- <logger name="jdbc.resultset" additivity="false"> 
-		<level value="DEBUG"/> 
+	<logger name="jdbc.resultset" additivity="false"> 
+		<level value="OFF"/> 
 		<appender-ref ref="console"/> 
-		</logger> -->
+		</logger>
 	<logger name="jdbc.resultsettable" additivity="false">
 		<level value="INFO" />
 		<appender-ref ref="console" />
@@ -55,7 +54,7 @@
 
 	<!-- Root Logger -->
 	<root>
-		<priority value="debug" />
+		<priority value="ERROR" />
 		<appender-ref ref="console" />
 	</root>
 	

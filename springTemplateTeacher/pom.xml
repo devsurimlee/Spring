@@ -228,11 +228,17 @@
 			<groupId>jfree</groupId>
 			<artifactId>jcommon</artifactId>
 			<version>1.0.16</version>
-		</dependency> 
+		</dependency>
 
-		
+		<!-- 웹소켓 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
 		
 	</dependencies>
+	
 	
 	<build>
 		<plugins>
