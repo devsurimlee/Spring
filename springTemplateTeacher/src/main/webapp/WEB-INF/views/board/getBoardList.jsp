@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>    
-<%@taglib prefix="my" tagdir="/WEB-INF/tags/" %> <!-- 내가만든 태그 가져옴 -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>    
+<%@ taglib prefix="my" tagdir="/WEB-INF/tags/" %> <!-- 내가만든 태그 가져옴 -->
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +38,7 @@
 </div>
 
 <!-- 목록시작 -->
+	<h1><spring:message code="message.board.list.mainTitle"/></h1>
 <h1>게시판</h1>
 <c:forEach items="${boardList }" var="board">
 	${board.seq } )

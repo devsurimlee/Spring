@@ -30,7 +30,10 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.yedam.exam" />
+	<!-- 필터? -->
+	<context:component-scan base-package="com.yedam.exam">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
 	
 	<!-- 파일 업로드  리졸브-->
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
@@ -48,7 +51,20 @@
 		<websocket:handshake-interceptors>
 			<beans:bean class="com.yedam.exam.common.HandshakeInterceptor"/>
 		</websocket:handshake-interceptors>
-	</websocket:handlers> 
+	</websocket:handlers>
+	
+	<!-- Tiles -->
+	<beans:bean
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver"
+		p:order="2"
+		p:viewClass="org.springframework.web.servlet.view.tiles3.TilesView" />
+	<!--Don't add suffix or prefix like you do with .jsp files -->
+	<beans:bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<beans:property name="definitions">
+			<beans:value>/WEB-INF/tiles.xml</beans:value>
+		</beans:property>
+	</beans:bean>
 	
 	<!-- 에러 예외처리 리졸브 -->
 <!-- 	<beans:bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
@@ -59,5 +75,22 @@
 		</beans:property>
 		<beans:property name="defaultErrorView" value="error/default"></beans:property>
 	</beans:bean> -->
+	
+	<beans:bean id="loginInterceptor" class="com.yedam.exam.common.LoginInterceptor"/>
+	
+	<!-- locale change interceptor  -->
+	<interceptors>
+<!-- 		<interceptor> -->
+<!--             <mapping path="/insertBoardForm"/>  -->
+<!--             <mapping path="/insertBoard"/> -->
+<!--             <exclude-mapping path="/getBoardList"/> -->
+<!--             <exclude-mapping path="/user/*"/> -->
+<!--             <beans:ref bean="loginInterceptor"/> -->
+<!--         </interceptor> -->
+
+		<beans:bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<beans:property name="paramName" value="lang"/>
+		</beans:bean>	
+	</interceptors>
 	
 </beans:beans>

@@ -15,7 +15,7 @@ import com.yedam.exam.board.common.Paging;
 import com.yedam.exam.board.service.BoardService;
 
 //아작스 처리용 컨트롤러
-@RestController //@Controller + @RespnesBody
+@RestController //@Controller + @ResPonseBody
 public class RestBoardController {
 	
 	@Autowired

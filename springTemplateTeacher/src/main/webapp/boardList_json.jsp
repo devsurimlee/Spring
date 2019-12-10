@@ -63,6 +63,7 @@
 				  .append(datas.title)
 				  .append(datas.content)
 				  .appendTo($("#boardList"));
+		console.log(JSON.stringify($("#frm").serializeObject()) );
 	}
 	
 	//삭제 요청

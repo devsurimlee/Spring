@@ -26,6 +26,19 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
+	//세션 null일시 로그인 폼으로 감
+	@RequestMapping("user/loginForm")
+	public String loginForm() {
+		return "/user/login";
+	}
+	
+	//로그인 했으면 게시판 목록으로 감
+	@RequestMapping("user/login")
+	public String login() {
+		return "redirect:/getBoardList";
+	}
+	
+	
 	//pdf 저장
 	@RequestMapping("/userReport")
 	public void report(HttpServletRequest request, HttpServletResponse response) throws Exception {

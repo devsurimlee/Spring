@@ -2,7 +2,6 @@ package com.yedam.exam.board.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.URLEncoder;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -28,16 +27,6 @@ import com.yedam.exam.board.BoardSearchVO;
 import com.yedam.exam.board.BoardVO;
 import com.yedam.exam.board.common.Paging;
 import com.yedam.exam.board.service.BoardService;
-
-import net.sf.jasperreports.engine.JRDataSource;
-import net.sf.jasperreports.engine.JRExporter;
-import net.sf.jasperreports.engine.JRExporterParameter;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.export.JRPdfExporter;
 
 @Controller
 public class BoardController {
@@ -80,7 +69,7 @@ public class BoardController {
 	// 등록페이지 가기
 	@RequestMapping("insertBoardForm")
 	public String insertBoardForm() {
-		return "board/insertBoard";
+		return "popup/board/insertBoard"; //popup/*/* 레이아웃 빠짐
 	}
 
 	// 글등록처리
