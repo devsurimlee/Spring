@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>    
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags/" %> <!-- 내가만든 태그 가져옴 -->
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,9 +34,17 @@
 		<button type="button" onclick="location.href='downloadExcel' ">엑셀다운로드</button>
 	</form>
 <!-- 검색폼 끝 -->
-	<form action="insertBoardForm">
-	<button>글쓰기</button>
-	</form>
+
+<sec:authentication property="principal.username"/>
+<sec:authentication property="principal.name"/>
+<sec:authentication property="principal.role"/>
+<sec:authorize access="isAuthenticated()">
+로그인중~~
+</sec:authorize>
+
+	<sec:authorize access="hasRole('Admin')">
+		<form action="insertBoardForm"><button>글쓰기 페이지로 이동</button></form>
+	</sec:authorize>
 </div>
 
 <!-- 목록시작 -->
