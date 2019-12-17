@@ -29,7 +29,7 @@
 		});
 	}
 	
-	//목로조회 결과처리
+	//목록 조회 결과처리
 	function getBoardListHandler(datas) {
 		for(i=0; i<datas.length; i++) {
 			$("<div>").append($("<span>").html(datas[i].seq))
