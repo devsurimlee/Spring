@@ -1,12 +1,6 @@
 package com.yedam.exam.users;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -34,13 +28,13 @@ public class CustomUserDetailsService implements UserDetailsService{
 	}
 
 
-	public Collection<GrantedAuthority> getAuthorities(String username) {
-		List<Authority> authList = dao.getRoles(username);
-		List<GrantedAuthority> authorities = new ArrayList<>();
-		for (Authority authority : authList) {
-			authorities.add(new SimpleGrantedAuthority(authority.getAuthority()));
-		}
-		return authorities;
-	}
+//	public Collection<GrantedAuthority> getAuthorities(String username) {
+//		List<Authority> authList = dao.getRoles(username);
+//		List<GrantedAuthority> authorities = new ArrayList<>();
+//		for (Authority authority : authList) {
+//			authorities.add(new SimpleGrantedAuthority(authority.getAuthority()));
+//		}
+//		return authorities;
+//	}
 
 }
