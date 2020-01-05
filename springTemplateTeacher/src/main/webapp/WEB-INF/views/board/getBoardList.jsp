@@ -41,8 +41,7 @@
 <sec:authorize access="isAuthenticated()">
 로그인중~~
 </sec:authorize>
-
-	<sec:authorize access="hasRole('Admin')">
+	<sec:authorize access="hasAuthority('Admin')">
 		<form action="insertBoardForm"><button>글쓰기 페이지로 이동</button></form>
 	</sec:authorize>
 </div>
